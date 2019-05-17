@@ -1,0 +1,30 @@
+{
+  "name": "react-native-google-books",
+  "version": "1.0.0",
+  "description": "A React Native component for browsing google books",
+  "main": "GoogleBookSearch.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anooj1483/react-native-google-books.git"
+  },
+  "keywords": [
+    "react-native-google-books",
+    "react",
+    "react-native-google",
+    "react-native-books",
+    "react",
+    "books"
+  ],
+  "author": "Anooj Krishnan G",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/anooj1483/react-native-google-books/issues"
+  },
+  "homepage": "https://github.com/anooj1483/react-native-google-books#readme",
+  "dependencies": {
+    "axios": "^0.18.0"
+  }
+}
