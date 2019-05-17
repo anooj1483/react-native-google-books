@@ -13,7 +13,7 @@ This react native component is purely written in Javascript and it works in both
 
 ## Demo
 
-![](https://github.com/anooj1483/react-native-google-books/blob/master/screenshots/demo.gif)
+![](https://raw.githubusercontent.com/anooj1483/react-native-google-books/master/screenshots/demo.gif)
 
 
 ## Prerequisites
