@@ -80,12 +80,13 @@ All Props Usage
 
 ```jsx
 <GoogleBookSearch                    
-    apikey={base.strings.apikey.books}
+    apikey={"API KEY"}
     value={"harry potter"}
     searchContainerStyle={{marginTop:32}}
     searchInputStyle={{fontSize:16}}
     resultContainerStyle={{padding:4}}
     resultItemStyle={{color:'blue'}}
+    interval={300}
     searchResult={(result) => console.log(result)}                    
     onResultPress={(book)=> console.log(book)} 
 />
