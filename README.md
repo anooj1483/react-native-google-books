@@ -2,7 +2,8 @@
 [![npm version](https://badge.fury.io/js/react-native-google-books.svg)](https://badge.fury.io/js/react-native-google-books)
 
 
-![](https://raw.githubusercontent.com/anooj1483/react-native-google-books/master/screenshots/rngb.png)
+
+<img src="https://raw.githubusercontent.com/anooj1483/react-native-google-books/master/screenshots/rngb.png" data-canonical-src="https://raw.githubusercontent.com/anooj1483/react-native-google-books/master/screenshots/rngb.png" width="100" height="100" />
 
 A React Native component for browsing google books
 
