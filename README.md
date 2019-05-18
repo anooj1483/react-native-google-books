@@ -2,6 +2,8 @@
 [![npm version](https://badge.fury.io/js/react-native-google-books.svg)](https://badge.fury.io/js/react-native-google-books)
 
 
+![](https://raw.githubusercontent.com/anooj1483/react-native-google-books/master/screenshots/rngb.png)
+
 A React Native component for browsing google books
 
 <img src="https://cdn.worldvectorlogo.com/logos/google-play-books.svg" data-canonical-src="https://cdn.worldvectorlogo.com/logos/google-play-books.svg" width="100" height="100" />    &nbsp;&nbsp;&nbsp;&nbsp;     <img src="http://pngimg.com/uploads/plus/plus_PNG110.png" data-canonical-src="http://pngimg.com/uploads/plus/plus_PNG110.png" width="40" height="40" />&nbsp;&nbsp;&nbsp;&nbsp; <img src="https://cdn.worldvectorlogo.com/logos/react.svg" data-canonical-src="https://cdn.worldvectorlogo.com/logos/react.svg" width="100" height="100" />
