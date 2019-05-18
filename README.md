@@ -73,7 +73,7 @@ onResultPress will give you the pressed book details.
 | searchInputStyle     |   object       |  | NO| Pass the style for the TextInput |
 | resultContainerStyle     |   object       |  | NO| Pass the style for the search result row container |
 | resultItemStyle     |   object       |  | NO| Pass the style for the search result text |
-| interval     |   number       | 800 | NO| This is a typing timer. When you stop typing of 800 ms, it will fetch the results |
+| interval     |   number       | 800 | NO| This is a typing timer. When you stop typing for 800 ms, it will fetch the results |
 
 
 All Props Usage
