@@ -2,7 +2,7 @@
  * @Author: Anooj Krishnan G 
  * @Date: 2019-05-17 19:40:13 
  * @Last Modified by: Anooj Krishnan G
- * @Last Modified time: 2019-05-18 00:01:07
+ * @Last Modified time: 2019-05-18 17:12:58
  */
 
 import React from 'react';
@@ -35,7 +35,8 @@ export default class GoogleBookSearch extends React.Component{
        keyboardType:PropTypes.string,
        returnKeyType:PropTypes.string,        
        onSubmitEditing:PropTypes.func,        
-       value:PropTypes.string
+       value:PropTypes.string,
+       interval:PropTypes.number
    };
    static defaultProps = {        
        apikey: "",        
@@ -44,7 +45,8 @@ export default class GoogleBookSearch extends React.Component{
        keyboardType:'default',
        returnKeyType:'done',        
        value:"",
-       showSearchResult:true
+       showSearchResult:true,
+       interval:800
    };
 
    constructor(props) {
@@ -115,7 +117,7 @@ export default class GoogleBookSearch extends React.Component{
                 typing: false,
                 typingTimeout: setTimeout(function () {
                     self.searchBook(val);
-                }, 800)
+                }, self.props.interval)
             });
         }
    }
