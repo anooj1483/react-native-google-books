@@ -2,22 +2,14 @@
  * @Author: Anooj Krishnan G 
  * @Date: 2019-05-17 19:40:13 
  * @Last Modified by: Anooj Krishnan G
- * @Last Modified time: 2019-05-18 17:12:58
+ * @Last Modified time: 2019-05-20 11:26:10
  */
 
 import React from 'react';
 import PropTypes from 'prop-types'
 import {TouchableHighlight, StyleSheet, Text, View, Dimensions, FlatList, TextInput} from 'react-native';
-import axios from 'axios'
+import BookSearch from './BookSearch'
 
-
-
-
-const instance = axios.create({
-   baseURL: "https://www.googleapis.com/books/v1/volumes",
-   timeout: 100000,
-   headers: {'Content-Type': 'application/json'}
-});
 const {height, width} = Dimensions.get('screen');
 
 export default class GoogleBookSearch extends React.Component{
@@ -124,17 +116,12 @@ export default class GoogleBookSearch extends React.Component{
 
    async searchBook(val){
         let self = this;
-        if(val.length > 2){
-            var text = encodeURI(val);
-            if(this.props.apikey != "" && this.props.apikey != undefined){
-                text += "&key="+this.props.apikey;
-            }
-
-            let res = await instance.get('?q='+text);            
-            if(res.status == 200 
-                && res.data != undefined 
-                && res.data.items != undefined){
-                    this.setState({gbooks:res.data.items},()=>{
+        if(val.length > 2){            
+            let res = await BookSearch.searchbook(val, this.props.apikey);                   
+            if(res.status 
+                && res.data != undefined){
+                    console.log(res.data)
+                    this.setState({gbooks:res.data},()=>{
                         self.searchResult()
                     })
             }

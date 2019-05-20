@@ -34,7 +34,7 @@ Generate the API key and enable the Google Books API
 ## Usage
 
 ```js
-import GoogleBookSearch from 'react-native-google-books';
+import {GoogleBookSearch} from 'react-native-google-books';
 ```
 
 Basic usage of GoogleBookSearch
@@ -57,6 +57,26 @@ onResultPress will give you the pressed book details.
       }
 ```
 
+You can use this as an API also,
+
+```js
+import {BookSearch} from 'react-native-google-books';
+```
+
+```js
+  async getGameofThronesBooks(){
+    let books = await BookSearch.searchbook("game of thrones","API_KEY");
+  }
+```
+
+```js
+  //Response of this request
+  {
+    status:true,
+    code:200,
+    data:[{}]
+  }
+```
 
 
 ## Props Available
