@@ -2,7 +2,7 @@
  * @Author: Anooj Krishnan G 
  * @Date: 2019-05-17 19:40:13 
  * @Last Modified by: Anooj Krishnan G
- * @Last Modified time: 2019-05-20 11:26:10
+ * @Last Modified time: 2019-11-13 22:39:12
  */
 
 import React from 'react';
@@ -15,7 +15,8 @@ const {height, width} = Dimensions.get('screen');
 export default class GoogleBookSearch extends React.Component{
    static propTypes = {        
        apikey: PropTypes.string,   
-       placeholder:PropTypes.string,     
+       placeholder:PropTypes.string, 
+       limit:PropTypes.number,    
        onTextChange: PropTypes.func,
        searchContainerStyle:PropTypes.object,
        searchInputStyle:PropTypes.object,
@@ -37,6 +38,7 @@ export default class GoogleBookSearch extends React.Component{
        keyboardType:'default',
        returnKeyType:'done',        
        value:"",
+       limit:-1,
        showSearchResult:true,
        interval:800
    };
@@ -56,14 +58,32 @@ export default class GoogleBookSearch extends React.Component{
        this.searchResult = this.searchResult.bind(this);
    }
 
+   getBookImageFromResult(book){
+       var thumbnail = {
+           small:null,
+           normal:null
+       }
+        if(book.volumeInfo != undefined 
+            && book.volumeInfo.imageLinks != undefined){
+
+               thumbnail.small = book.volumeInfo.imageLinks.smallThumbnail!=undefined?book.volumeInfo.imageLinks.smallThumbnail:null;
+               thumbnail.normal = book.volumeInfo.imageLinks.thumbnail!=undefined?book.volumeInfo.imageLinks.thumbnail:null;
+        }
+
+        return thumbnail;
+   }
+
    renderGBooks(item, index){
        let name = item.volumeInfo.title
+       let image = this.getBookImageFromResult(item)
        let obj = {
            id:item.id,
            title:name,
            authors:item.volumeInfo.authors,
            isbn:item.volumeInfo.industryIdentifiers,
-           raw:item
+           raw:item,
+           smallThumbnail:image.small,
+           thumbnail:image.normal
        }
        return(
            <TouchableHighlight 
@@ -121,7 +141,14 @@ export default class GoogleBookSearch extends React.Component{
             if(res.status 
                 && res.data != undefined){
                     console.log(res.data)
-                    this.setState({gbooks:res.data},()=>{
+                    var booksArray = res.data;
+                    if(self.props.limit != -1){
+                        if(booksArray.length > self.props.limit){
+                            let sliced = booksArray.slice(0,self.props.limit)
+                            booksArray = sliced;
+                        }
+                    }
+                    this.setState({gbooks:booksArray},()=>{
                         self.searchResult()
                     })
             }
