@@ -1,6 +1,6 @@
 {
   "name": "react-native-google-books",
-  "version": "1.0.3-beta",
+  "version": "1.0.4-beta",
   "description": "A React Native component for browsing google books",
   "main": "index.js",
   "scripts": {
