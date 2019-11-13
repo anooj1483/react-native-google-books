@@ -2,7 +2,7 @@
  * @Author: Anooj Krishnan G 
  * @Date: 2019-05-17 19:40:13 
  * @Last Modified by: Anooj Krishnan G
- * @Last Modified time: 2019-11-13 22:39:12
+ * @Last Modified time: 2019-11-13 22:58:24
  */
 
 import React from 'react';
@@ -74,16 +74,27 @@ export default class GoogleBookSearch extends React.Component{
    }
 
    renderGBooks(item, index){
+       let book = item;
        let name = item.volumeInfo.title
-       let image = this.getBookImageFromResult(item)
+       //let image = this.getBookImageFromResult(item)
+       var thumbnail = {
+            small:"",
+            normal:""
+        }
+        if(book.volumeInfo != undefined 
+            && book.volumeInfo.imageLinks != undefined){
+
+               thumbnail.small = book.volumeInfo.imageLinks.smallThumbnail!=undefined?book.volumeInfo.imageLinks.smallThumbnail:null;
+               thumbnail.normal = book.volumeInfo.imageLinks.thumbnail!=undefined?book.volumeInfo.imageLinks.thumbnail:null;
+        }
        let obj = {
            id:item.id,
            title:name,
            authors:item.volumeInfo.authors,
            isbn:item.volumeInfo.industryIdentifiers,
            raw:item,
-           smallThumbnail:image.small,
-           thumbnail:image.normal
+           smallThumbnail:thumbnail.small,
+           thumbnail:thumbnail.normal
        }
        return(
            <TouchableHighlight 
