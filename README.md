@@ -94,6 +94,7 @@ import {BookSearch} from 'react-native-google-books';
 | resultContainerStyle     |   object       |  | NO| Pass the style for the search result row container |
 | resultItemStyle     |   object       |  | NO| Pass the style for the search result text |
 | interval     |   number       | 800 | NO| This is a typing timer. When you stop typing for 800 ms, it will fetch the results |
+| limit     |   number       | 10 | NO| Limit the number of search results |
 
 
 All Props Usage

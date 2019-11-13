@@ -2,7 +2,7 @@
  * @Author: Anooj Krishnan G 
  * @Date: 2019-05-17 19:40:13 
  * @Last Modified by: Anooj Krishnan G
- * @Last Modified time: 2019-11-13 22:58:24
+ * @Last Modified time: 2019-11-13 23:05:58
  */
 
 import React from 'react';
@@ -58,32 +58,15 @@ export default class GoogleBookSearch extends React.Component{
        this.searchResult = this.searchResult.bind(this);
    }
 
-   getBookImageFromResult(book){
-       var thumbnail = {
-           small:null,
-           normal:null
-       }
-        if(book.volumeInfo != undefined 
-            && book.volumeInfo.imageLinks != undefined){
-
-               thumbnail.small = book.volumeInfo.imageLinks.smallThumbnail!=undefined?book.volumeInfo.imageLinks.smallThumbnail:null;
-               thumbnail.normal = book.volumeInfo.imageLinks.thumbnail!=undefined?book.volumeInfo.imageLinks.thumbnail:null;
-        }
-
-        return thumbnail;
-   }
-
    renderGBooks(item, index){
        let book = item;
        let name = item.volumeInfo.title
-       //let image = this.getBookImageFromResult(item)
        var thumbnail = {
             small:"",
             normal:""
         }
         if(book.volumeInfo != undefined 
             && book.volumeInfo.imageLinks != undefined){
-
                thumbnail.small = book.volumeInfo.imageLinks.smallThumbnail!=undefined?book.volumeInfo.imageLinks.smallThumbnail:null;
                thumbnail.normal = book.volumeInfo.imageLinks.thumbnail!=undefined?book.volumeInfo.imageLinks.thumbnail:null;
         }
