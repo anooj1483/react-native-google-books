@@ -28,6 +28,6 @@
   },
   "homepage": "https://github.com/anooj1483/react-native-google-books#readme",
   "dependencies": {
-    "axios": "^0.18.0"
+    "axios": "^0.21.1"
   }
 }
